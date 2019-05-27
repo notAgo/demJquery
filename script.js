@@ -46,7 +46,7 @@ $(document).ready(function () {
         $.each(response, function (i, obj) {
             console.log("ciao");
 
-            myItem += '<a href="#" class="list-group-item list-group-item-action">' + obj.team + '</a>';
+            myItem += '<a href="category.html?id='+obj.team+'" class="list-group-item list-group-item-action">' + obj.team + '</a>';
 
 
         });
