@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>F1 Stats.com</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Viga&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="scriptContact.js"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-16x16.png">
+    <link rel="manifest" href="/logo/site.webmanifest">
+
+    <style>
+        * {
+            font-family: 'Viga', sans-serif;
+        }
+
+        .link-card {
+            color: black;
+        }
+
+        .link-card:hover {
+            text-decoration: none;
+            color: black;
+        }
+
+        #loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+            width: 150px;
+            height: 150px;
+            margin: -75px 0 0 -75px;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #f80b0b;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 1s linear infinite;
+            animation: spin 1s linear infinite;
+        }
+
+        #divContainer {
+
+            animation: fade 2s linear;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+        }
+
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 0.09;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Add animation to "page content" */
+        .animate-bottom {
+            position: relative;
+            -webkit-animation-name: animatebottom;
+            -webkit-animation-duration: 1s;
+            animation-name: animatebottom;
+            animation-duration: 1s
+        }
+
+        @-webkit-keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+
+            to {
+                bottom: 0px;
+                opacity: 1
+            }
+        }
+
+        @keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
+
+        #myDiv {
+            display: none;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        var myVar;
+
+        function myFunction() {
+            document.getElementById("divContainer").style.opacity = "0.09";
+            myVar = setTimeout(showPage, 1000);
+
+        }
+
+        function showPage() {
+
+            document.getElementById("loader").style.display = "none";
+            
+        }
+    </script>
+</head>
+
+<body style="overflow-x: hidden" onload="myFunction()">
+    <!--LOADER-->
+    <div id="contenitoreLoader">
+        <div id="loader"></div>
+    </div>
+
+
+
+
+
+
+    <div id="divContainer">
+
+        <!--NAVBAR-->
+        <div class="row justify-content-end" style="background:linear-gradient(to right,red ,darkred ,red)">
+            <div class="col" style="margin-left: 30px">
+                <a href="index.html">
+                    <h2 style="color: white">
+                        F1 Stats.com
+                    </h2>
+                </a>
+
+            </div>
+
+            <div class="col">
+                <ul class="nav justify-content-end">
+
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" href="contact.html">Contact Us</a>
+                    </li>
+                    <div class="nav-item">
+
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+        <!--CONTAINER-->
+        <div class="container" style="margin-top: 20px;">
+
+            <div class="row">
+                <!-- Section Titile -->
+                <div class="col-md-12 wow animated fadeInLeft" data-wow-delay=".2s">
+                    <h1 class="section-title">Contact us!</h1>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Section Titile -->
+                <div class="col-md-6 mt-3 contact-widget-section2 wow animated fadeInLeft" data-wow-delay=".2s">
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page
+                        when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                        distribution of letters, as opposed to using Content.</p>
+
+                    <div class="find-widget">
+                        Company: <a href="#">F1 Stats</a>
+                    </div>
+                   
+                    
+
+                    <div class="find-widget">
+                        Website: <a href="#">F1Stats.com</a>
+                    </div>
+                    <div class="find-widget">
+                        Program: <a href="#">Mon to Sat: 09:30 AM - 10.30 PM</a>
+                    </div>
+                </div>
+                <!-- contact form -->
+                <div class="col-md-6 wow animated fadeInRight" data-wow-delay=".2s">
+                    <form class="shake" role="form" method="post" id="contactForm" name="contact-form"
+                        data-toggle="validator">
+                        <!-- Name -->
+                        <div class="form-group label-floating">
+                            <label class="control-label" for="name">Name</label>
+                            <input class="form-control" id="name" type="text" name="name" required
+                                data-error="Please enter your name">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <!-- email -->
+                        <div class="form-group label-floating">
+                            <label class="control-label" for="email">Email</label>
+                            <input class="form-control" id="email" type="email" name="email" required
+                                data-error="Please enter your Email">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <!-- Subject -->
+                        <div class="form-group label-floating">
+                            <label class="control-label">Subject</label>
+                            <input class="form-control" id="msg_subject" type="text" name="subject" required
+                                data-error="Please enter your message subject">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <!-- Message -->
+                        <div class="form-group label-floating">
+                            <label for="message" class="control-label">Message</label>
+                            <textarea class="form-control" rows="3" id="message" name="message" required
+                                data-error="Write your message"></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <!-- Form Submit -->
+                        <div class="form-submit mt-5">
+                            <button class="btn btn-common" type="button" id="form-submit"><i
+                                    class="material-icons mdi mdi-message-outline"></i> Send Message</button>
+                            <div id="msgSubmit" class="h3 text-center hidden"></div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer"
+            style="display:flex; width: 100%; height:80px; background:linear-gradient(to right,red ,darkred ,red);color:white;justify-content: center;align-items: center;margin-top: 20px">
+            <p>@Copyright</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
