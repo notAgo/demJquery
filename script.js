@@ -1,5 +1,16 @@
 $(document).ready(function () {
+    //ENABLE POPOVER
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
 
+    //ENABLE TOOLTIPS
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
+
+    //Creazione card drivers
     var itemSettings = {
         "async": true,
         "crossDomain": true,
@@ -33,6 +44,7 @@ $(document).ready(function () {
     });
 
 
+    //Creazione link squadre
     var itemSettings = {
         "async": true,
         "crossDomain": true,
@@ -46,7 +58,7 @@ $(document).ready(function () {
         $.each(response, function (i, obj) {
             console.log("ciao");
 
-            myItem += '<a href="category.html?id='+obj.team+'" class="list-group-item list-group-item-action">' + obj.team + '</a>';
+            myItem += '<a href="category.html?id=' + obj.team + '" class="list-group-item list-group-item-action">' + obj.team + '</a>';
 
 
         });
