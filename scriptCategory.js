@@ -1,4 +1,13 @@
 $(document).ready(function () {
+    //ENABLE POPOVER
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
+
+    //ENABLE TOOLTIPS
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
 
     var pageId = decodeURIComponent(window.location.search.trim());
     console.log(pageId);
@@ -56,7 +65,7 @@ $(document).ready(function () {
         $.each(response, function (i, obj) {
 
             if ("?id=" + obj.team == pageId) {
-                myItem += '<a href="category.html?id=' + obj.team + '" class="list-group-item list-group-item-action active">' + obj.team + '</a>';
+                myItem += '<a href="category.html?id=' + obj.team + '" class="list-group-item list-group-item-action">' + obj.team +" (selected)"+ '</a>';
             }
             else {
                 myItem += '<a href="category.html?id=' + obj.team + '" class="list-group-item list-group-item-action">' + obj.team + '</a>';
