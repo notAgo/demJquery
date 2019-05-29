@@ -2,13 +2,26 @@
 <html lang="en">
 
 <head>
+    <!--META-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>F1 Stats.com</title>
+
+    <title>F1Stats.com</title>
+
+    <!--LINKS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+        integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Viga&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="./logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./logo/favicon-16x16.png">
+    <link rel="manifest" href="/logo/site.webmanifest">
+
+
+    <!--SCRIPTS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -18,50 +31,78 @@
         crossorigin="anonymous"></script>
 
     <script src="./script.js"></script>
+    <script src="./footer.js"></script>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-16x16.png">
-    <link rel="manifest" href="/logo/site.webmanifest">
 
+    <!--STYLES-->
     <style>
         * {
             font-family: 'Viga', sans-serif;
+            font-style: italic;
+        }
+
+        body {
+            background-image: url(https://camalstudio.com/wp-content/uploads/2018/01/carbon-fiber-pattern.jpg);
+            background-size: 150%;
+            background-attachment: fixed;
+            background-position: -30% 30%;
+           
+        }
+
+        
+
+        .footer {
+            background-image: url(https://i.imgur.com/HFdpBTR.png);
+            background-attachment: fixed;
         }
 
         .link-card {
             color: black;
+            text-decoration: none;
+            transition: 0.2s;
         }
 
         .link-card:hover {
             text-decoration: none;
             color: black;
+            transition: 0.2s;
         }
 
-        #loader {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            z-index: 1;
-            width: 150px;
-            height: 150px;
-            margin: -75px 0 0 -75px;
-            border: 16px solid #f3f3f3;
-            border-radius: 50%;
-            border-top: 16px solid #f80b0b;
-            width: 120px;
-            height: 120px;
-            -webkit-animation: spin 1s linear infinite;
-            animation: spin 1s linear infinite;
+        .card:hover {
+            text-decoration: none;
+            color: black;
+            -webkit-transform: scale(2);
+            transform: scale(1.1);
+            transition: 0.2s;
+
         }
 
-        #divContainer{
-            
-            animation: fade 2s linear ;
+        .list-group-item:hover,
+        .list-group-item-action :hover {
+            text-decoration: none;
+            color: black;
+            -webkit-transform: scale(1);
+            transform: scale(1.10);
+            transition: 0.2s;
+        }
+
+        #divContainer {
+            opacity: 0;
+            animation: fade 1s linear;
             animation-delay: 1s;
             animation-fill-mode: forwards;
         }
 
+        
+
+        #menu {
+            animation: blinker 3s linear infinite;
+            animation-delay: 2;
+        }
+
+        #container{
+            animation: contentblinker 5s linear infinite;
+        }
 
         @-webkit-keyframes spin {
             0% {
@@ -84,126 +125,176 @@
         }
 
         @keyframes fade {
-            0%{
-                opacity: 0.09;
+            0% {
+                opacity: 0;
             }
-            100%{
+
+            100% {
                 opacity: 1;
             }
         }
-        /* Add animation to "page content" */
-        .animate-bottom {
-            position: relative;
-            -webkit-animation-name: animatebottom;
-            -webkit-animation-duration: 1s;
-            animation-name: animatebottom;
-            animation-duration: 1s
+        .slide-top {
+            -webkit-animation: slide-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s both;
+            animation: slide-top 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s both;
         }
 
-        @-webkit-keyframes animatebottom {
-            from {
-                bottom: -100px;
-                opacity: 0
+
+
+        @-webkit-keyframes slide-top {
+            0% {
+                -webkit-transform: translateY(100px);
+                transform: translateY(100px);
             }
 
-            to {
-                bottom: 0px;
-                opacity: 1
+            100% {
+                -webkit-transform: translateY(0px);
+                transform: translateY(0px);
             }
         }
 
-        @keyframes animatebottom {
-            from {
-                bottom: -100px;
-                opacity: 0
+        @keyframes slide-top {
+            0% {
+                -webkit-transform: translateY(100px);
+                transform: translateY(100px);
             }
 
-            to {
-                bottom: 0;
-                opacity: 1
+            100% {
+                -webkit-transform: translateY(0px);
+                transform: translateY(0px);
             }
         }
 
-        #myDiv {
-            display: none;
-            text-align: center;
+        @keyframes blinker {
+            50% {
+                box-shadow: 0px 0px 50px 8px rgb(255, 0, 0)
+            }
         }
+
+        @keyframes bodyblinker{
+            50% {
+                box-shadow: inset 2px 90px 97px 11px rgba(252,0,13,1);
+            }
+        }
+
+        @keyframes contentblinker{
+            50% {
+                box-shadow: 0px 0px 40px 1px rgba(255,0,0,1);
+            }
+        }
+        ::-webkit-scrollbar-button{ display: none; height: 13px; border-radius: 0px; background-color: #AAA; } ::-webkit-scrollbar-button:hover{ background-color: #AAA; } ::-webkit-scrollbar-thumb{ background-color: #ff0000; border-radius: 9px; } ::-webkit-scrollbar-thumb:hover{ background-color: #CCC; } ::-webkit-scrollbar-track{ background-color: #ffffff; } ::-webkit-scrollbar-track:hover{ background-color: #CCC; } ::-webkit-scrollbar{ width: 0; }
     </style>
 
+    <!--SCRIPTS 2-->
     <script>
         var myVar;
 
         function myFunction() {
-            document.getElementById("divContainer").style.opacity = "0.09";
+            document.getElementById("divContainer").style.opacity = "0";
             myVar = setTimeout(showPage, 1000);
 
         }
 
         function showPage() {
-            
             document.getElementById("loader").style.display = "none";
-            document.getElementById("myDiv").style.display = "block";
         }
+
     </script>
 </head>
 
-<body style="overflow-x: hidden" onload="myFunction()">
+<body style="overflow-x: hidden;" onload="myFunction()">
     <!--LOADER-->
+    <!--
     <div id="contenitoreLoader">
         <div id="loader"></div>
     </div>
+    -->
 
 
-
-
-
-
-    <div id="divContainer">
+    <div id="divContainer" style="width: 100%; height:100%">
 
         <!--NAVBAR-->
-        <div class="row justify-content-end" style="background:linear-gradient(to right,red ,darkred ,red)">
-            <div class="col" style="margin-left: 30px">
-                <h2 style="color: white">
-                    F1 Stats.com
-                </h2>
+        
+        <div class="row justify-content-end" id="menu"
+            style="background:whitesmoke; background-size: 150% ;box-shadow: 3px 9px 7px 6px rgba(0,0,0,0.79);margin: 0;padding: 0;">
+            <div class="col-lg-3">
+                <a href="index.html" style="text-decoration: none">
+                    <h2 style="color: red;">
+                        <b>F1STATS.com
+                        </b> </h2>
+                </a>
+
             </div>
 
-            <div class="col">
+            <div class="col-lg-9">
                 <ul class="nav justify-content-end">
+                    <a class="nav-link active text-danger" href="contact.html">Contact Us</a>
 
-                    <li class="nav-item">
-                        <a class="nav-link active text-white" href="contact.html">Contact Us</a>
-                    </li>
-                    <div class="nav-item">
-                        
+                    
+                    <a class="nav-link active text-danger dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">LOGIN</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <form class="px-4 py-3">
+                            <div class="form-group">
+                                <label for="exampleDropdownFormEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                                    placeholder="email@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleDropdownFormPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleDropdownFormPassword1"
+                                    placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                    <label class="form-check-label" for="dropdownCheck">
+                                        Remember me
+                                    </label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-danger">Sign in</button>
+                            <button type="submit" class="btn btn-danger">Sign up</button>
+                        </form>
                     </div>
                 </ul>
+
             </div>
+
         </div>
-       
+        
+
         <!--CONTAINER-->
-        <div class="container" style="margin-top: 20px;">
-
-            <!--LISTA SQUADRE-->
+        <div class="container" id="container" style="margin-top: 20px;background-color: white; -webkit-box-shadow: -17px 23px 11px 4px rgba(0,0,0,0.66); 
+        box-shadow: -17px 23px 11px 4px rgba(0,0,0,0.66);z-index: 10">
             <div class="row">
+                <div class="col">
+                    <h1 class="slide-top" style="z-index: -1 "><i>WELCOME TO THE WORLD OF FORMULA 1</i></h1>
+                </div>
+            </div>
 
-                <div class="col-lg-3">
+            <div class="row">
+                <!--LISTA SQUADRE-->
+                <div class="col-lg-3" style="background-color: white">
 
-                    <h1>Teams</h1>
+
+                    <h3 data-toggle="popover" data-content="Select your favourite team to see their drivers."
+                        style="background-color: white; text-align: center" >-TEAMS-
+                    </h3>
 
                     <div class="list-group" id="listBrand">
 
                     </div>
 
-
                 </div>
 
 
-                <!--CAROUSEL & CARDS-->
-                <div class="col-lg-9">
 
+
+                <!--CAROUSEL & CARDS-->
+                <div class="col-lg-9" style="background-color: white">
+                    <h3 style="text-align: center">-GALLERY-</h3>
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"
-                        style="margin-bottom: 50px">
+                        style="margin-bottom: 50px;">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -235,8 +326,13 @@
                         </a>
                     </div>
 
+                    <div class="row">
+                        <div class="col">
+                            <h3 style="text-align: center">-DRIVERS-</h3>
+                        </div>
 
-
+                    </div>
+                    <!--CARDS-->
                     <div class="row" id="listItems">
                     </div>
 
@@ -245,17 +341,11 @@
             </div>
 
         </div>
-        <div class="footer"
-            style="display:flex; width: 100%; height:80px; background:linear-gradient(to right,red ,darkred ,red);color:white;justify-content: center;align-items: center;margin-top: 20px">
+        <div class="footer" id="footer"
+            style="display:flex; width: 100%; height:80px;background:url(https://i.imgur.com/HFdpBTR.png);background-size: 150%;background-position: 0 50%;color:white;justify-content: center;align-items: center;margin-top: 20px; box-shadow: 3px -4px 7px 6px rgba(0,0,0,0.79);">
             <p>@Copyright</p>
         </div>
-    </div>
 
 
-
-
-
-
-</body>
 
 </html>
